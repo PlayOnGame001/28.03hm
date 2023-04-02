@@ -14,13 +14,13 @@ namespace _28._03hm
         abstract public void Show();
     }
 
-    class LightInfantry : CombatUnit
+    class Shturm : CombatUnit
     {
-        public LightInfantry()
+        public Shturm()
         {
-            name = "Легкая пехота";
-            speed = "20";
-            power = "10";
+            name = "Штурмовики";
+            speed = "50";
+            power = "-19";
         }
         public override void Show()
         {
@@ -30,13 +30,13 @@ namespace _28._03hm
         }
     }
 
-    class TransportVehicles : CombatUnit
+    class Dgadai : CombatUnit
     {
-        public TransportVehicles()
+        public Dgadai()
         {
-            name = "Транспортные автомашины";
-            speed = "70";
-            power = "0";
+            name = "Джедаии";
+            speed = "100";
+            power = "10000";
         }
         public override void Show()
         {
@@ -46,12 +46,12 @@ namespace _28._03hm
         }
     }
 
-    class HeavyCombat : CombatUnit
+    class Droid : CombatUnit
     {
-        public HeavyCombat()
+        public Droid()
         {
-            name = "Тяжелая наземная боевая техника";
-            speed = "15";
+            name = "Дроиды";
+            speed = "25";
             power = "100";
         }
         public override void Show()
@@ -62,13 +62,13 @@ namespace _28._03hm
         }
     }
 
-    class LightCombat : CombatUnit
+    class Padvan : CombatUnit
     {
-        public LightCombat()
+        public Padvan()
         {
-            name = "Легкая наземная боевая техника";
+            name = "Падаваны";
             speed = "50";
-            power = "30";
+            power = "50";
         }
         public override void Show()
         {
@@ -78,12 +78,12 @@ namespace _28._03hm
         }
     }
 
-    class Aircraft : CombatUnit
+    class Cap : CombatUnit
     {
-        public Aircraft()
+        public Cap()
         {
-            name = "Авиатехника";
-            speed = "300";
+            name = "Кап";
+            speed = "120";
             power = "100";
         }
         public override void Show()
@@ -97,13 +97,13 @@ namespace _28._03hm
 
     class CombatFactory
     {
-        List<Tuple<LightInfantry, string>> combats = new List<Tuple<LightInfantry, string>>();
+        List<Tuple<Shturm, string>> combats = new List<Tuple<Shturm, string>>();
 
         public CombatFactory(params CombatUnit[] cu)
         {
             foreach (var elem in cu)
             {
-                combats.Add(new Tuple<LightInfantry, string>(new LightInfantry(), elem.name));
+                combats.Add(new Tuple<Shturm, string>(new Shturm(), elem.name));
             }
         }
         public void Show()
@@ -116,9 +116,6 @@ namespace _28._03hm
             }
         }
     }
-
-
-
     internal class Program
     {
         static void Main(string[] args)
